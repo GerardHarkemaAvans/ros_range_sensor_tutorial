@@ -11,7 +11,7 @@
   </include>
 
   <!-- Start the BoxHeightInformation publisher node (Assignment 1)-->
-  <node name="box_height_metres" pkg="range_sensor" type="assignment1.py"
+  <node name="<add-node-name>" pkg="range_sensor" type="<add-node-type>"
     output="screen"/>
 
   <!-- Start the metres_to_feet service server ROS node.-->
@@ -19,6 +19,6 @@
     output="screen"/>
 
   <!-- BoxHeightInformation subscriber / convert to Feet node (Assignment 2)-->
-  <node name="box_height_feet" pkg="range_sensor" type="assignment2.py"
+  <node name="<add-node-name>" pkg="range_sensor" type="<add-node-type>y"
     output="screen"/>
 </launch>
