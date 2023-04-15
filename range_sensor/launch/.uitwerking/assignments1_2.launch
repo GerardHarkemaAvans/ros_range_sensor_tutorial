@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<launch>
+
+  <!-- Arguments definition -->
+  <arg name="sim"                 default="false"/>
+    
+  <!-- Start the sensor info publisher node.-->
+  
+  <include file="$(find range_sensor)/launch/sensor_info_publisher.launch">
+    <arg name="sim" value="$(arg sim)"/>
+  </include>
+
+  <!-- Start the BoxHeightInformation publisher node (Assignment 1)-->
+  <node name="box_height_metres" pkg="range_sensor" type="assignment1.py"
+    output="screen"/>
+
+  <!-- Start the metres_to_feet service server ROS node.-->
+  <node name="metres_to_feet" pkg="range_sensor" type="metres_to_feet_server.py"
+    output="screen"/>
+
+  <!-- BoxHeightInformation subscriber / convert to Feet node (Assignment 2)-->
+  <node name="box_height_feet" pkg="range_sensor" type="assignment2.py"
+    output="screen"/>
+</launch>
